@@ -36,14 +36,23 @@ main .container{
 /* calculator */
 
 .calculator{
+    padding: 1rem;
     height: 100%;
     width: 70%;
 }
 
 .calc-display{
     height: 20%;
+    border-radius: 18px;
     background-color: #555;
+    color: white;
+    font-family: 'Calculator', sans-serif;;
 }
+
+.calc-display h3{
+    font-size: 5rem;
+}
+
 
 .calc-btns-container{
     flex-grow: 1;
@@ -54,7 +63,12 @@ main .container{
 
 .calc-history{
     height: 100%;
+    overflow: auto;
     flex-grow: 1;
     border-left: 2px solid #777;
-    background-color: cadetblue;
+    background-color: #fafafa;
+}
+
+h2{
+    color: #222;
 }

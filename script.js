@@ -66,6 +66,7 @@ const app = createApp({
         this.calcOperator = opr;
         this.firstNumber = this.textDisplayed;
         this.textDisplayed = "0";
+        if (!this.numberPressed) this.numberPressed = true;
       } else {
         const firstCalcNum = parseFloat(this.firstNumber);
         const secondCalcNum = parseFloat(this.textDisplayed);
@@ -136,6 +137,56 @@ const app = createApp({
      */
     clearHistory() {
       this.calcHistory = [];
+    },
+
+    /**
+     * Calculate the result between two number and push the result in array
+     */
+    equalsBtnClicked() {
+      if (this.calcOperator) {
+        const firstCalcNum = parseFloat(this.firstNumber);
+        const secondCalcNum = parseFloat(this.textDisplayed);
+        switch (this.calcOperator) {
+          case "+":
+            this.textDisplayed = (firstCalcNum + secondCalcNum).toString();
+            this.pushCalcHistory(
+              firstCalcNum,
+              this.calcOperator,
+              secondCalcNum,
+              this.textDisplayed
+            );
+            break;
+          case "-":
+            this.textDisplayed = (firstCalcNum - secondCalcNum).toString();
+            this.pushCalcHistory(
+              firstCalcNum,
+              this.calcOperator,
+              secondCalcNum,
+              this.textDisplayed
+            );
+            break;
+          case "/":
+            this.textDisplayed = (firstCalcNum / secondCalcNum).toString();
+            this.pushCalcHistory(
+              firstCalcNum,
+              this.calcOperator,
+              secondCalcNum,
+              this.textDisplayed
+            );
+            break;
+          case "*":
+            this.textDisplayed = (firstCalcNum * secondCalcNum).toString();
+            this.pushCalcHistory(
+              firstCalcNum,
+              this.calcOperator,
+              secondCalcNum,
+              this.textDisplayed
+            );
+            break;
+          case "%":
+            console.log("ciao");
+        }
+      }
     },
   },
 });

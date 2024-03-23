@@ -56,8 +56,39 @@ main .container{
 
 .calc-btns-container{
     flex-grow: 1;
-    background-color: aqua;
+    margin-top: 1rem;
+    align-content: space-between;
 }
+
+.calc-btn{
+    width: calc(100% / 4 - 36px);
+    height: calc(100% / 5 - 20px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 18px;
+    font-weight: bold;
+}
+
+span:last-child{
+    display: none;
+}
+
+.opr{
+    color: rgba(255, 166, 0, 0.719);
+    background-color: #444;
+    font-size: 2.5rem;
+}
+
+.numb {
+    color: white;
+    background-color: rgba(255, 166, 0, 0.801);
+    font-size: 3rem;
+
+}
+
+
+
 
 /* calc-history */
 

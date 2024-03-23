@@ -145,9 +145,15 @@
             <!-- history -->
             <section class="calc-history text-center py-3">
               <!-- history section title -->
-              <h2 class="fw-semibold">HISTORY</h2>
+              <div class="d-flex justify-content-center align-items-center">
+                <h2 class="fw-semibold d-inline-block">HISTORY</h2>
+                <button class="btn btn-danger ms-3" @click="clearHistory()">
+                  <i class="fa-solid fa-trash"></i>
+                </button>
+              </div>
               <hr />
               <div class="p-1">
+                <!-- calculation generator -->
                 <h4 v-for="calc in calcHistory">{{calc}}</h4>
               </div>
             </section>

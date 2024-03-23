@@ -112,6 +112,15 @@ const app = createApp({
       }
     },
 
+    /**
+     *
+     * Create the calculation string and push it in the history array
+     *
+     * @param {float} firstNum
+     * @param {string} operator
+     * @param {float} secondNum
+     * @param {string} result
+     */
     pushCalcHistory(firstNum, operator, secondNum, result) {
       const calculation =
         firstNum.toString() + operator + secondNum.toString() + "=" + result;
@@ -120,6 +129,13 @@ const app = createApp({
 
       this.calcOperator = "";
       this.firstNumber = "";
+    },
+
+    /**
+     * Clear history array
+     */
+    clearHistory() {
+      this.calcHistory = [];
     },
   },
 });

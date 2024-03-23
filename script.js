@@ -72,7 +72,9 @@ const app = createApp({
         const secondCalcNum = parseFloat(this.textDisplayed);
         switch (this.calcOperator) {
           case "+":
-            this.textDisplayed = (firstCalcNum + secondCalcNum).toString();
+            this.textDisplayed = (firstCalcNum + secondCalcNum)
+              .toPrecision()
+              .toString();
             this.pushCalcHistory(
               firstCalcNum,
               opr,
@@ -81,7 +83,9 @@ const app = createApp({
             );
             break;
           case "-":
-            this.textDisplayed = (firstCalcNum - secondCalcNum).toString();
+            this.textDisplayed = (firstCalcNum - secondCalcNum)
+              .toPrecision()
+              .toString();
             this.pushCalcHistory(
               firstCalcNum,
               opr,
@@ -90,7 +94,9 @@ const app = createApp({
             );
             break;
           case "/":
-            this.textDisplayed = (firstCalcNum / secondCalcNum).toString();
+            this.textDisplayed = (firstCalcNum / secondCalcNum)
+              .toPrecision()
+              .toString();
             this.pushCalcHistory(
               firstCalcNum,
               opr,
@@ -99,7 +105,9 @@ const app = createApp({
             );
             break;
           case "*":
-            this.textDisplayed = (firstCalcNum * secondCalcNum).toString();
+            this.textDisplayed = (firstCalcNum * secondCalcNum)
+              .toPrecision()
+              .toString();
             this.pushCalcHistory(
               firstCalcNum,
               opr,
@@ -148,7 +156,9 @@ const app = createApp({
         const secondCalcNum = parseFloat(this.textDisplayed);
         switch (this.calcOperator) {
           case "+":
-            this.textDisplayed = (firstCalcNum + secondCalcNum).toString();
+            this.textDisplayed = (firstCalcNum + secondCalcNum)
+              .toPrecision()
+              .toString();
             this.pushCalcHistory(
               firstCalcNum,
               this.calcOperator,
@@ -157,7 +167,9 @@ const app = createApp({
             );
             break;
           case "-":
-            this.textDisplayed = (firstCalcNum - secondCalcNum).toString();
+            this.textDisplayed = (firstCalcNum - secondCalcNum)
+              .toPrecision()
+              .toString();
             this.pushCalcHistory(
               firstCalcNum,
               this.calcOperator,
@@ -166,7 +178,9 @@ const app = createApp({
             );
             break;
           case "/":
-            this.textDisplayed = (firstCalcNum / secondCalcNum).toString();
+            this.textDisplayed = (firstCalcNum / secondCalcNum)
+              .toPrecision()
+              .toString();
             this.pushCalcHistory(
               firstCalcNum,
               this.calcOperator,
@@ -175,7 +189,9 @@ const app = createApp({
             );
             break;
           case "*":
-            this.textDisplayed = (firstCalcNum * secondCalcNum).toString();
+            this.textDisplayed = (firstCalcNum * secondCalcNum)
+              .toPrecision()
+              .toString();
             this.pushCalcHistory(
               firstCalcNum,
               this.calcOperator,

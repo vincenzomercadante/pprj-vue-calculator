@@ -1,0 +1,60 @@
+body{
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* ? header & footer rules */
+header, footer{
+    background-color: #444;
+}
+
+header .container{
+    height: 70px;
+}
+
+main{
+    height: calc(100vh - 120px);
+    background-color: snow;
+}
+
+footer .container{
+    height: 50px;
+    color: white;
+}
+
+
+/* ? main content */
+main .container{
+    padding: 40px 0;
+}
+
+.app-container{
+    height: calc(100vh - 120px - 80px);
+    border: 5px solid orange;
+}
+
+/* calculator */
+
+.calculator{
+    height: 100%;
+    width: 70%;
+}
+
+.calc-display{
+    height: 20%;
+    background-color: #555;
+}
+
+.calc-btns-container{
+    flex-grow: 1;
+    background-color: aqua;
+}
+
+/* calc-history */
+
+.calc-history{
+    height: 100%;
+    flex-grow: 1;
+    border-left: 2px solid #777;
+    background-color: cadetblue;
+}

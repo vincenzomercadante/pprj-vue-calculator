@@ -68,8 +68,10 @@ const app = createApp({
         this.textDisplayed = "0";
         if (!this.numberPressed) this.numberPressed = true;
       } else {
-        const firstCalcNum = parseFloat(this.firstNumber);
-        const secondCalcNum = parseFloat(this.textDisplayed);
+        if (this.calcOperator != "%") {
+          const firstCalcNum = parseFloat(this.firstNumber);
+          const secondCalcNum = parseFloat(this.textDisplayed);
+        }
         switch (this.calcOperator) {
           case "+":
             this.textDisplayed = (firstCalcNum + secondCalcNum)
@@ -114,9 +116,6 @@ const app = createApp({
               secondCalcNum,
               this.textDisplayed
             );
-            break;
-          case "%":
-            console.log("ciao");
         }
       }
     },
@@ -203,6 +202,15 @@ const app = createApp({
             console.log("ciao");
         }
       }
+    },
+
+    /**
+     * Calc percentage of displayed number
+     */
+    percentageBtnClicked() {
+      this.textDisplayed = (parseFloat(this.textDisplayed) / 100)
+        .toPrecision()
+        .toString();
     },
   },
 });

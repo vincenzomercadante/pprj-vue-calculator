@@ -69,7 +69,9 @@
                 class="calc-display p-3 mx-3 d-flex align-items-center justify-content-end"
               >
                 <!-- display text -->
-                <h3 class="m-0 fw-bold">{{textDisplayed}}</h3>
+                <h3 class="m-0 fw-bold" @change="numberCheck()">
+                  {{textDisplayed}}
+                </h3>
               </div>
 
               <!-- buttons container -->
@@ -83,57 +85,57 @@
                 </div>
 
                 <!-- sign btn -->
-                <div class="calc-btn opr">+/-</div>
+                <div class="calc-btn opr" @click="changeSign()">+/-</div>
 
                 <!-- percentage btn -->
-                <div class="calc-btn opr">%</div>
+                <div class="calc-btn opr" @click="operatorClicked('%')">%</div>
 
                 <!-- division button -->
-                <div class="calc-btn opr">/</div>
+                <div class="calc-btn opr" @click="operatorClicked('/')">/</div>
 
                 <!-- seven button -->
                 <div class="calc-btn numb" @click="addValue('7')">7</div>
 
                 <!-- eight button -->
-                <div class="calc-btn numb">8</div>
+                <div class="calc-btn numb" @click="addValue('8')">8</div>
 
                 <!-- nine button -->
-                <div class="calc-btn numb">9</div>
+                <div class="calc-btn numb" @click="addValue('9')">9</div>
 
                 <!-- moltiplication button -->
-                <div class="calc-btn opr">X</div>
+                <div class="calc-btn opr" @click="operatorClicked('*')">X</div>
 
                 <!-- four button -->
-                <div class="calc-btn numb">4</div>
+                <div class="calc-btn numb" @click="addValue('4')">4</div>
 
                 <!-- five button -->
-                <div class="calc-btn numb">5</div>
+                <div class="calc-btn numb" @click="addValue('5')">5</div>
 
                 <!-- six button -->
-                <div class="calc-btn numb">6</div>
+                <div class="calc-btn numb" @click="addValue('6')">6</div>
 
                 <!-- menus button -->
-                <div class="calc-btn opr">-</div>
+                <div class="calc-btn opr" @click="operatorClicked('-')">-</div>
 
                 <!-- one button -->
-                <div class="calc-btn numb">1</div>
+                <div class="calc-btn numb" @click="addValue('1')">1</div>
 
                 <!-- two button -->
-                <div class="calc-btn numb">2</div>
+                <div class="calc-btn numb" @click="addValue('2')">2</div>
 
                 <!-- three button -->
-                <div class="calc-btn numb">3</div>
+                <div class="calc-btn numb" @click="addValue('3')">3</div>
 
                 <!-- plus button -->
-                <div class="calc-btn opr">+</div>
+                <div class="calc-btn opr" @click="operatorClicked('+')">+</div>
 
                 <div class="calc-btn opr"></div>
 
                 <!-- zero button -->
-                <div class="calc-btn numb">0</div>
+                <div class="calc-btn numb" @click="addValue('0')">0</div>
 
                 <!-- comma button -->
-                <div class="calc-btn opr">,</div>
+                <div class="calc-btn opr" @click="addValue('.')">.</div>
 
                 <!-- equal button -->
                 <div class="calc-btn opr">=</div>
@@ -144,6 +146,10 @@
             <section class="calc-history text-center py-3">
               <!-- history section title -->
               <h2 class="fw-semibold">HISTORY</h2>
+              <hr />
+              <div class="p-1">
+                <h4 v-for="calc in calcHistory">{{calc}}</h4>
+              </div>
             </section>
           </div>
         </div>
